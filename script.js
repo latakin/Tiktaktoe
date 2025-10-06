@@ -44,6 +44,7 @@ function Cell() {
 }
 
 function Screen(board, getActivePlayer, switchPlayerTurn, checkWinnerCallback) {
+     
     const createDiv = () => {
         const GameD = document.querySelector('.gameboard');
         GameD.innerHTML = ''; // Clear board on each new round
@@ -85,6 +86,7 @@ function Screen(board, getActivePlayer, switchPlayerTurn, checkWinnerCallback) {
 
 function GameController() {
     const board = GameBoard();
+   
     const players = [
         { name: 'PlayerOne', token: 'X' },
         { name: 'PlayerTwo', token: 'O' }
@@ -127,6 +129,9 @@ function GameController() {
 
 GameController();
 
-    
+const restart = document.querySelector('#restart');
+    restart.addEventListener('click', () => {
+        window.location.reload();
+    })    
 
 

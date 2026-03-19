@@ -13,23 +13,7 @@ function GameBoard() {
 
   const getBoard = () => board;
 
-  const dropValue = (row, column, player) => {
-    let cell = board[row][column];
-    if (board.getValue() === "") {
-      cell.addValue(player);
-    } else {
-      console.log("Cell already taken!");
-    }
-  };
-
-  const printBoard = () => {
-    const boardWithValues = board.map((row) =>
-      row.map((cell) => cell.getValue()),
-    );
-    console.log(boardWithValues);
-  };
-
-  return { getBoard, dropValue, printBoard };
+  return { getBoard };
 }
 
 function Cell() {
@@ -53,6 +37,7 @@ function Screen(board, getActivePlayer, switchPlayerTurn, checkWinnerCallback) {
     GameD.innerHTML = ""; // Clear board on each new round
     const message = document.querySelector("#playersTurn");
     //const players = ["PlayerOne", "PlayerTwo"];
+
     let divClick = true;
     board.getBoard().forEach((row, rowindex) => {
       row.forEach((cell, cellindex) => {
@@ -60,6 +45,7 @@ function Screen(board, getActivePlayer, switchPlayerTurn, checkWinnerCallback) {
         let playerText = document.createElement("h2");
         div.appendChild(playerText);
         div.style.backgroundColor = "black";
+        div.setAttribute("class", "cell");
         playerText.textContent = cell.getValue();
         playerText.style.color = cell.getColor();
 
@@ -110,7 +96,7 @@ function GameController() {
 
   const switchPlayerTurn = () => {
     activePlayer = activePlayer === players[0] ? players[1] : players[0];
-    updateScreen.createDiv();
+    //updateScreen.createDiv();
   };
 
   const getActivePlayer = () => activePlayer;

@@ -1,27 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  height: 100vh;
+  background-color: greenyellow;
 }
 
+h1 {
+  font-size: 3rem;
+  color: brown;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+}
 .cell {
-    border: 1px solid white;
-    color: red;
-    cursor: pointer;
-    font-size: 60px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .gameboard {
-    width: 200px;
-    height: 200px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3,1fr);
-    padding: 10px;
-    margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 10px;
+  margin: 0 auto;
+}
+
+#restart {
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(0, 0, 255, 0.651);
+}
+
+#playersTurn {
+  font-size: 3rem;
+  margin: 10px;
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
